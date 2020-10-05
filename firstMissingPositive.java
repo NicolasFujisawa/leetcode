@@ -6,8 +6,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 class Solution {
-    private static final Logger LOGGER = Logger.getLogger( Solution.class.getName() );
-
     public int firstMissingPositive(int[] nums) {
         int answer = 1;
         int i = 0;
@@ -20,7 +18,6 @@ class Solution {
             nums[nums[i] - 1] = nums[i];
             nums[i] = temp;
         }
-        LOGGER.log(Level.INFO, "{0}", Arrays.toString(nums));
         for(int num : nums) {
             if(answer == num) {
                 answer++;
